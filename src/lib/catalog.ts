@@ -87,18 +87,7 @@ export async function getCatalog(): Promise<CatalogItem[]> {
     .map(normalizeRow)
     .filter((i) => i.fileId); // must have a fileId
 
-  // Sort: sortOrder ASC first if present, otherwise keep stable by title/fileId
-  items.sort((a, b) => {
-    const ao = a.sortOrder ?? Number.POSITIVE_INFINITY;
-    const bo = b.sortOrder ?? Number.POSITIVE_INFINITY;
-    if (ao !== bo) return ao - bo;
-
-    const at = (a.title ?? "").toLowerCase();
-    const bt = (b.title ?? "").toLowerCase();
-    if (at !== bt) return at.localeCompare(bt);
-
-    return a.fileId.localeCompare(b.fileId);
-  });
+  
 
   return items;
 }
