@@ -124,22 +124,51 @@ export default async function Page() {
       </section>
 
       {/* BIO */}
-      <section id="bio" style={{ marginTop: 64 }}>
-        <h2>Bio</h2>
-        <p style={{ opacity: 0.85, lineHeight: 1.6 }}>
-          Maurice Burns was a Santa Fe–based painter whose work reflects decades
-          of exploration in form, color, and landscape. This site presents
-          selected works from the estate.
-        </p>
-      </section>
+<section id="bio" style={{ marginTop: 64 }}>
+  <h2>About the Estate</h2>
 
-      {/* CONTACT */}
-      <section id="contact" style={{ marginTop: 32 }}>
-        <h2>Contact</h2>
-        <p style={{ opacity: 0.85 }}>
-          For availability and pricing inquiries, please contact the estate.
-        </p>
-      </section>
+  <p style={{ opacity: 0.85, lineHeight: 1.6 }}>
+    This site presents selected works and belongings from the estate of Maurice
+    Burns, offered for inquiry and sale. Items include artwork, studio materials,
+    and personal objects collected over the course of his life and career. For
+    availability, pricing, and further information, please contact the estate
+    representative.
+  </p>
+
+  <p style={{ marginTop: 16, opacity: 0.85, lineHeight: 1.6 }}>
+    Maurice Burns (1937–2024) was a visionary American painter whose work spanned
+    decades of cultural exploration and formal innovation. His complex,
+    collage-like canvases drew from jazz, American history, figurative painting,
+    and personal identity, weaving together influences from the Harlem
+    Renaissance, Pop Art, Native American culture, and the School of London.
+  </p>
+
+  <p style={{ marginTop: 16, opacity: 0.85, lineHeight: 1.6 }}>
+    After studying at the Rhode Island School of Design and the Royal College of
+    Art in London, Burns became an influential figure in the American art world.
+    He lived and worked in Santa Fe for more than forty years, where his work was
+    widely exhibited and collected. His paintings have been shown nationally and
+    internationally, including through Gerald Peters Gallery’s contemporary
+    program.
+  </p>
+</section>
+
+{/* CONTACT */}
+<section id="contact" style={{ marginTop: 40 }}>
+  <h2>Contact</h2>
+
+  <p style={{ opacity: 0.85, lineHeight: 1.6 }}>
+    For inquiries regarding availability, pricing, or additional information,
+    please contact the estate directly at{" "}
+    <a
+      href="mailto:solar_power@mac.com"
+      style={{ textDecoration: "underline" }}
+    >
+      solar_power@mac.com
+    </a>
+    .
+  </p>
+</section>
     </main>
   );
 }
