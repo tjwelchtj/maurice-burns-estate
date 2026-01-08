@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getCatalog } from "@/lib/catalog";
 
 function statusLabel(status?: string) {
