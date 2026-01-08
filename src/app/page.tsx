@@ -114,9 +114,11 @@ export default async function Page() {
                   </div>
                 ) : null}
 
-                <div style={{ marginTop: 10, fontSize: 13 }}>
-                  {item.price || "Inquiries only"}
-                </div>
+                {String(item.status || "").toLowerCase().includes("sold") ? null : (
+  <div style={{ marginTop: 10, fontSize: 13 }}>
+    {item.price || "Inquiries only"}
+  </div>
+)}
               </div>
             </a>
           );

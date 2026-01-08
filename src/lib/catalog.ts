@@ -15,6 +15,20 @@ export type CatalogItem = {
   sortOrder?: number;
 };
 
+export function normalizeStatus(s?: string) {
+  return (s ?? "").trim().toLowerCase();
+}
+
+export function getPriceLabel(item: { status?: string; price?: string }) {
+  const status = normalizeStatus(item.status);
+  if (status !== "available") return null;
+
+  const price = (item.price ?? "").trim();
+  if (!price) return "Inquiry for price";
+
+  return price; // can be "$500" or "500" etc. We'll display as-is.
+}
+
 function cleanString(value: unknown): string {
   return String(value ?? "")
     .trim()
