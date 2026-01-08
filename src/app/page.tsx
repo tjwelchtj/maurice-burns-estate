@@ -99,31 +99,27 @@ export default async function Page() {
               </div>
 
               {/* META */}
-              <div style={{ padding: 12 }}>
-                <div style={{ fontWeight: 650 }}>
-                  {item.title || item.filename || "Untitled"}
-                </div>
-
-                <div style={{ marginTop: 6, fontSize: 13, opacity: 0.85 }}>
-                  {[item.year, item.medium].filter(Boolean).join(" · ")}
-                </div>
-
-                {item.dimensions ? (
-                  <div style={{ marginTop: 4, fontSize: 13, opacity: 0.75 }}>
-                    {item.dimensions}
-                  </div>
-                ) : null}
-
-                {String(item.status || "").toLowerCase().includes("sold") ? null : (
-  <div style={{ marginTop: 10, fontSize: 13 }}>
-    {item.price || "Inquiries only"}
+<div style={{ padding: 12 }}>
+  <div style={{ fontWeight: 650 }}>
+    {item.title || item.filename || "Untitled"}
   </div>
-)}
-              </div>
-            </a>
-          );
-        })}
-      </section>
+
+  <div style={{ marginTop: 6, fontSize: 13, opacity: 0.85 }}>
+    {[item.year, item.medium].filter(Boolean).join(" · ")}
+  </div>
+
+  {item.dimensions ? (
+    <div style={{ marginTop: 4, fontSize: 13, opacity: 0.75 }}>
+      {item.dimensions}
+    </div>
+  ) : null}
+
+  {!String(item.status || "").toLowerCase().includes("sold") ? (
+    <div style={{ marginTop: 10, fontSize: 13 }}>
+      {item.price ? <strong>{item.price}</strong> : "Inquiries only"}
+    </div>
+  ) : null}
+</div>
 
       {/* BIO */}
 <section id="bio" style={{ marginTop: 64 }}>
