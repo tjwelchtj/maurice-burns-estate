@@ -44,23 +44,29 @@ function toNumberOrUndefined(value: unknown): number | undefined {
 }
 
 function normalizeRow(row: Record<string, unknown>): CatalogItem {
-  // Your CSV headers:
+  // Make CSV headers case/spacing-insensitive (e.g. "Price" vs "price")
+  const r: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(row)) {
+    r[k.trim().toLowerCase()] = v;
+  }
+
+  // Expected headers (any casing):
   // fileId filename driveImageUrl title year medium dimensions price status description notes sortOrder
-  const fileId = cleanString(row.fileId);
+  const fileId = cleanString(r["fileid"] ?? r["file id"] ?? r["file_id"]);
 
   return {
     fileId,
-    filename: cleanString(row.filename) || undefined,
-    driveImageUrl: cleanString(row.driveImageUrl) || undefined,
-    title: cleanString(row.title) || undefined,
-    year: cleanString(row.year) || undefined,
-    medium: cleanString(row.medium) || undefined,
-    dimensions: cleanString(row.dimensions) || undefined,
-    price: cleanString(row.price) || undefined,
-    status: cleanString(row.status) || undefined,
-    description: cleanString(row.description) || undefined,
-    notes: cleanString(row.notes) || undefined,
-    sortOrder: toNumberOrUndefined(row.sortOrder),
+    filename: cleanString(r["filename"]) || undefined,
+    driveImageUrl: cleanString(r["driveimageurl"] ?? r["drive image url"] ?? r["drive_image_url"]) || undefined,
+    title: cleanString(r["title"]) || undefined,
+    year: cleanString(r["year"]) || undefined,
+    medium: cleanString(r["medium"]) || undefined,
+    dimensions: cleanString(r["dimensions"]) || undefined,
+    price: cleanString(r["price"]) || undefined,
+    status: cleanString(r["status"]) || undefined,
+    description: cleanString(r["description"]) || undefined,
+    notes: cleanString(r["notes"]) || undefined,
+    sortOrder: toNumberOrUndefined(r["sortorder"] ?? r["sort order"] ?? r["sort_order"]),
   };
 }
 
