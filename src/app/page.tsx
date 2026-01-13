@@ -140,7 +140,7 @@ export default async function Page() {
         </p>
 
         <p style={{ marginTop: 16, opacity: 0.85, lineHeight: 1.6 }}>
-          Maurice Burns (1937–2024) was a visionary American painter whose work spanned
+          Maurice Burns (1937–2025) was a visionary American painter whose work spanned
           decades of cultural exploration and formal innovation. His complex,
           collage-like canvases drew from jazz, American history, figurative painting,
           and personal identity, weaving together influences from the Harlem
@@ -168,7 +168,7 @@ export default async function Page() {
             href="mailto:solar_power@mac.com"
             style={{ textDecoration: "underline" }}
           >
-            solar_power@mac.com
+            mauriceburnsestate@gmail.com
           </a>
           .
         </p>
